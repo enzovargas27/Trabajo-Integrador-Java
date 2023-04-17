@@ -1,17 +1,31 @@
-class Ronda:
-        def __init__(self, nro):
-        self.nro = nro
-        self.partidos = []
+public class Ronda {
+    private String nro;
+    private Partido[] partidos;
 
-        def agregar_partido(self, partido):
-        self.partidos.append(partido)
+    public Ronda(String nro, Partido[] partidos) {
+        this.nro = nro;
+        this.partidos = partidos;
+    }
 
-        def puntos(self, pronosticos):
-        puntaje_total = 0
-        for partido in self.partidos:
-        pronostico = pronosticos.get(pronosticos, None)
-        if pronostico:
-        if pronostico.resultado() == partido.resultado():
-        puntaje_total += pronostico.puntos()
-        return puntaje_total
+    public String getNro() {
+        return nro;
+    }
+
+    public void setNro(String nro) {
+        this.nro = nro;
+    }
+
+    public Partido[] getPartidos() {
+        return partidos;
+    }
+
+    public void setPartidos(Partido[] partidos) {
+        this.partidos = partidos;
+    }
+
+    public int puntos() {
+        // TODO: Implementar método para calcular los puntos de la ronda
+        return 0;
+    }
+}
 

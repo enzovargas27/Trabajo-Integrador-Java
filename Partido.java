@@ -11,23 +11,49 @@ public class Partido {
         this.golesEquipo2 = golesEquipo2;
     }
 
+    public Equipo getEquipo1() {
+        return equipo1;
+    }
+
+    public void setEquipo1(Equipo equipo1) {
+        this.equipo1 = equipo1;
+    }
+
+    public Equipo getEquipo2() {
+        return equipo2;
+    }
+
+    public void setEquipo2(Equipo equipo2) {
+        this.equipo2 = equipo2;
+    }
+
+    public int getGolesEquipo1() {
+        return golesEquipo1;
+    }
+
+    public void setGolesEquipo1(int golesEquipo1) {
+        this.golesEquipo1 = golesEquipo1;
+    }
+
+    public int getGolesEquipo2() {
+        return golesEquipo2;
+    }
+
+    public void setGolesEquipo2(int golesEquipo2) {
+        this.golesEquipo2 = golesEquipo2;
+    }
+
     public ResultadoEnum resultado(Equipo equipo) {
-        if (golesEquipo1 > golesEquipo2) {
-            if (equipo.equals(equipo1)) {
-                return ResultadoEnum.Ganador;
-            } else if (equipo.equals(equipo2)) {
-                return ResultadoEnum.Perdedor;
-            }
-        } else if (golesEquipo2 > golesEquipo1) {
-            if (equipo.equals(equipo2)) {
-                return ResultadoEnum.Ganador;
-            } else if (equipo.equals(equipo1)) {
-                return ResultadoEnum.Perdedor;
-            }
+        if (golesEquipo1 > golesEquipo2 && equipo.equals(equipo1)) {
+            return ResultadoEnum.Ganador;
+        } else if (golesEquipo1 < golesEquipo2 && equipo.equals(equipo2)) {
+            return ResultadoEnum.Ganador;
         } else if (golesEquipo1 == golesEquipo2) {
             return ResultadoEnum.Empate;
+        } else {
+            return ResultadoEnum.Perdedor;
         }
-        return null;
     }
 }
+
 
